@@ -4,11 +4,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 
 function App() {
   return (
-    <DashboardLayout>
-      <div className="bg-blue-200 text-black">
-        
-      </div>
-    </DashboardLayout>
+    <DashboardLayout />
   )
 }
 
