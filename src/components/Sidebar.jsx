@@ -1,4 +1,4 @@
-import { X, Home, ShoppingCart, BarChart } from "lucide-react";
+import { X, Home, ShoppingCart, Users, Package, Settings } from "lucide-react";
 
 export default function Sidebar({ closeSidebar }) {
   return (
@@ -10,28 +10,49 @@ export default function Sidebar({ closeSidebar }) {
         </button>
       </div>
 
+      {/* Logo */}
+      <div className="px-6 py-4">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          Logo
+        </h1>
+      </div>
+
       {/* Links */}
-      <nav className="flex-1 px-4 space-y-4">
+      <nav className="flex-1 px-4 py-6 space-y-4">
         <a
           href="#"
-          className="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+          className="flex items-center space-x-3 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
         >
           <Home className="w-5 h-5" />
-          <span>Home</span>
+          <span>Dashboard</span>
         </a>
         <a
           href="#"
-          className="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+          className="flex items-center space-x-3 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
         >
           <ShoppingCart className="w-5 h-5" />
           <span>Orders</span>
         </a>
         <a
           href="#"
-          className="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+          className="flex items-center space-x-3 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
         >
-          <BarChart className="w-5 h-5" />
-          <span>Analytics</span>
+          <Users className="w-5 h-5" />
+          <span>Customers</span>
+        </a>
+        <a
+          href="#"
+          className="flex items-center space-x-3 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+        >
+          <Package className="w-5 h-5" />
+          <span>Products</span>
+        </a>
+        <a
+          href="#"
+          className="flex items-center space-x-3 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+        >
+          <Settings className="w-5 h-5" />
+          <span>Settings</span>
         </a>
       </nav>
     </div>
