@@ -2,6 +2,7 @@ import { ShoppingCart, Users, DollarSign, Package } from "lucide-react";
 import StatCard from "../components/StatCard";
 import LineChartComponent from "../components/LineChart";
 import OrdersTable from "../components/OrdersTable"; 
+import SalesChart from "../components/SalesChart";
 
 export default function Dashboard() {
   return (
@@ -34,34 +35,31 @@ export default function Dashboard() {
         />
       </div>
 
-      {/* ---------- Second row: Chart + Table (left) and BarChart (right) ---------- */}
+      {/* ---------- Second row: LineChart (left) + PieChart (right) ---------- */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left side: stacked (LineChart + OrdersTable) */}
-        <div className="lg:col-span-2 space-y-6">
-          {/* Line chart */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">
-              Revenue Trend
-            </h2>
-            <LineChartComponent />
-          </div>
-
-          {/* Orders table */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-            <OrdersTable />
-          </div>
-        </div>
-
-        {/* Right side: tall BarChart (spans full height of both left blocks) */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:row-span-2">
+        {/* Line chart (2/3 width) */}
+        <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg shadow p-4">
           <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">
-            Bar Chart
+            Revenue Trend
           </h2>
-          <p className="text-gray-500 dark:text-gray-400">
-            📊 This will be replaced with a BarChart that spans the same height
-            as the LineChart + OrdersTable.
-          </p>
+          <LineChartComponent />
         </div>
+
+        {/* Pie chart (1/3 width, same row as line chart) */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col">
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">
+            Sales Breakdown
+          </h2>
+          {/* Ensure PieChart fills available height but doesn’t stretch too tall */}
+          <div className="flex-1 h-64">
+            <SalesChart />
+          </div>
+        </div>
+      </div>
+
+      {/* ---------- Third row: Orders table full width ---------- */}
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+        <OrdersTable />
       </div>
     </div>
   );
