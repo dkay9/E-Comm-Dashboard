@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import { useState } from "react";
 
-export default function DashboardLayout({ children }) {
+export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -21,8 +22,6 @@ export default function DashboardLayout({ children }) {
         <div className="w-64 h-full bg-white dark:bg-gray-800 shadow-lg">
           <Sidebar closeSidebar={() => setSidebarOpen(false)} />
         </div>
-
-        {/* Dark backdrop when sidebar is open */}
         <div
           className="fixed inset-0 bg-black bg-opacity-50"
           onClick={() => setSidebarOpen(false)}
@@ -32,7 +31,9 @@ export default function DashboardLayout({ children }) {
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         <Navbar onMenuClick={() => setSidebarOpen(true)} />
-        <main className="flex-1 overflow-y-auto p-6">{children}</main>
+        <main className="flex-1 overflow-y-auto p-6">
+          <Outlet /> {/* 🔥 this is where your pages render */}
+        </main>
       </div>
     </div>
   );
