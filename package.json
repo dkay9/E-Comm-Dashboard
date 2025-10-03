@@ -2,10 +2,10 @@
   "name": "ecommerce-dashboard",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://USERNAME.github.io/E-Comm-Dashboard",
+  "homepage": "https://dkay9.github.io/E-Comm-Dashboard",
   "repository": {
     "type": "git",
-    "url": "https://github.com/USERNAME/E-Comm-Dashboard.git"
+    "url": "https://github.com/dkay9/E-Comm-Dashboard.git"
   },
   "type": "module",
   "scripts": {
